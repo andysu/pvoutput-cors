@@ -30,6 +30,9 @@
 
   <title>PVOutput Mobile</title>
   <link rel="manifest" href="manifest.json">
+  
+  
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
   <style id="splash-screen-style">
     html {
       height: 100%
@@ -39,33 +42,53 @@
       margin: 0;
       min-height: 100%;
       background-color: #000000;
-      background-size: 100% 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+          background-size: 100% 100%;
     }
 
     .center {
-      width: 120px;
-      height: 120px;
-      margin-bottom: 24px;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
     }
 
-    .loader {
-      width: 48px;
-      height: 48px;
-      border: 5px solid #FFD700;
-      border-bottom-color: transparent;
-      border-radius: 50%;
-      display: inline-block;
-      box-sizing: border-box;
-      animation: rotation 1s linear infinite;
+    .contain {
+      display:block;
+      width:100%; height:100%;
+      object-fit: contain;
     }
 
-    @keyframes rotation {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .stretch {
+      display:block;
+      width:100%; height:100%;
+    }
+
+    .cover {
+      display:block;
+      width:100%; height:100%;
+      object-fit: cover;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+
+    .bottomLeft {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .bottomRight {
+      position: absolute;
+      bottom: 0;
+      right: 0;
     }
   </style>
   <script id="splash-screen-script">
@@ -73,19 +96,16 @@
       document.getElementById("splash")?.remove();
       document.getElementById("splash-branding")?.remove();
       document.body.style.background = "transparent";
-      document.body.style.display = "block";
     }
   </script>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 </head>
 <body>
-  <div id="splash">
-      <img class="center" src="icons/Icon-192.png" alt="Logo">
-      <div style="text-align: center;">
-          <span class="loader"></span>
-          <p style="color: #FFD700; font-family: sans-serif; font-weight: bold; margin-top: 16px;">PVOutput Mobile</p>
-      </div>
-  </div>
+  <picture id="splash">
+      <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
+      <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
+      <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+  </picture>
+  
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
