@@ -91,6 +91,14 @@
       right: 0;
     }
   </style>
+  <div id="unsupported-ui" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000; color:#fff; text-align:center; padding:40px; box-sizing:border-box; font-family:sans-serif; z-index:10000;">
+    <h1 style="color:#FFD700; margin-top:20%;">Потрібне оновлення</h1>
+    <p style="font-size:18px; line-height:1.5;">Ваш пристрій або браузер застарів.<br>Для роботи додатка потрібна версія <b>iOS 13.0</b> або новіша.</p>
+    <hr style="border:0; border-top:1px solid #333; margin:30px 0;">
+    <h1 style="color:#FFD700;">Update Required</h1>
+    <p style="font-size:18px; line-height:1.5;">Your device or browser is too old.<br>This app requires <b>iOS 13.0</b> or newer.</p>
+  </div>
+
   <script id="splash-screen-script">
     function removeSplashFromWeb() {
       var splash = document.getElementById("splash");
@@ -102,32 +110,26 @@
 
     (function() {
       var ua = navigator.userAgent;
-      var isLegacyIOS = /iPhone|iPad|iPod/.test(ua) && /OS 12_/.test(ua);
+      
+      // Перевірка на стару iOS (нижче 13)
+      var isOldIOS = false;
+      if (/iPhone|iPad|iPod/.test(ua)) {
+        var match = ua.match(/OS (\d+)_/);
+        if (match && parseInt(match[1], 10) < 13) {
+          isOldIOS = true;
+        }
+      }
 
-      if (isLegacyIOS) {
-        // --- ULTRA LITE LOADER FOR iOS 12 ---
-        window.flutterWebRenderer = "html";
-        window.flutterConfiguration = { renderer: "html" };
+      // Перевірка на відсутність WebAssembly (критично для Flutter)
+      var supportsWasm = typeof WebAssembly === "object" && typeof WebAssembly.instantiate === "function";
 
-        window.addEventListener('load', function() {
-          setTimeout(function() {
-            var script = document.createElement('script');
-            script.src = 'main.dart.js';
-            window._flutter = {
-              loader: {
-                didCreateEngineInitializer: function(ei) {
-                  ei.initializeEngine({ renderer: 'html' }).then(function(ar) {
-                    removeSplashFromWeb();
-                    ar.runApp();
-                  });
-                }
-              }
-            };
-            document.body.appendChild(script);
-          }, 500); // Даємо час на рендеринг заставки
-        });
+      if (isOldIOS || !supportsWasm) {
+        // Показуємо заглушку
+        document.getElementById("unsupported-ui").style.display = "block";
+        var splash = document.getElementById("splash");
+        if (splash) splash.style.display = "none";
       } else {
-        // --- STANDARD MODERN LOADER ---
+        // Стандартний завантажувач для нормальних пристроїв
         var script = document.createElement('script');
         script.src = "flutter_bootstrap.js";
         script.async = true;
