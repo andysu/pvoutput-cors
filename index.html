@@ -105,26 +105,18 @@
       var isLegacyIOS = /iPhone|iPad|iPod/.test(ua) && /OS 12_/.test(ua);
 
       if (isLegacyIOS) {
-        // --- LOGIC FOR iOS 12 (iPhone 6) ---
+        // --- RADICAL FIX FOR iOS 12 (iPhone 6) ---
+        
+        // 1. Повне блокування Service Worker (це основна причина перевантажень)
+        try {
+          Object.defineProperty(navigator, 'serviceWorker', { get: function() { return undefined; } });
+        } catch (e) {}
+
+        // 2. Глобальні налаштування рендерера
+        window.flutterWebRenderer = "html";
         window.flutterConfiguration = { renderer: "html" };
         
-        // Вивід помилок ТІЛЬКИ для iOS 12
-        window.onerror = function(msg, url, line, col, error) {
-          var div = document.createElement("div");
-          div.style.position = "fixed"; div.style.top = "0"; div.style.left = "0";
-          div.style.background = "red"; div.style.color = "white"; div.style.zIndex = "9999";
-          div.style.fontSize = "10px"; div.style.padding = "5px";
-          div.innerHTML = "iOS 12 Error: " + msg + " at " + line + ":" + col;
-          document.body.appendChild(div);
-        };
-
-        // Вимикаємо Service Worker для iOS 12
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.getRegistrations().then(function(regs) {
-            for(var i = 0; i < regs.length; i++) { regs[i].unregister(); }
-          });
-        }
-
+        // 3. Спрощений завантажувач без складних Promises
         window.addEventListener('load', function() {
           var script = document.createElement('script');
           script.src = 'main.dart.js';
@@ -140,7 +132,7 @@
           document.body.appendChild(script);
         });
       } else {
-        // --- LOGIC FOR MODERN BROWSERS ---
+        // --- NORMAL LOGIC FOR MODERN BROWSERS ---
         var script = document.createElement('script');
         script.src = "flutter_bootstrap.js";
         script.async = true;
