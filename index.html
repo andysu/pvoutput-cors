@@ -105,34 +105,29 @@
       var isLegacyIOS = /iPhone|iPad|iPod/.test(ua) && /OS 12_/.test(ua);
 
       if (isLegacyIOS) {
-        // --- RADICAL FIX FOR iOS 12 (iPhone 6) ---
-        
-        // 1. Повне блокування Service Worker (це основна причина перевантажень)
-        try {
-          Object.defineProperty(navigator, 'serviceWorker', { get: function() { return undefined; } });
-        } catch (e) {}
-
-        // 2. Глобальні налаштування рендерера
+        // --- ULTRA LITE LOADER FOR iOS 12 ---
         window.flutterWebRenderer = "html";
         window.flutterConfiguration = { renderer: "html" };
-        
-        // 3. Спрощений завантажувач без складних Promises
+
         window.addEventListener('load', function() {
-          var script = document.createElement('script');
-          script.src = 'main.dart.js';
-          window._flutter = window._flutter || {};
-          window._flutter.loader = {
-            didCreateEngineInitializer: function(engineInitializer) {
-              engineInitializer.initializeEngine({ renderer: 'html' }).then(function(appRunner) {
-                removeSplashFromWeb();
-                appRunner.runApp();
-              });
-            }
-          };
-          document.body.appendChild(script);
+          setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = 'main.dart.js';
+            window._flutter = {
+              loader: {
+                didCreateEngineInitializer: function(ei) {
+                  ei.initializeEngine({ renderer: 'html' }).then(function(ar) {
+                    removeSplashFromWeb();
+                    ar.runApp();
+                  });
+                }
+              }
+            };
+            document.body.appendChild(script);
+          }, 500); // Даємо час на рендеринг заставки
         });
       } else {
-        // --- NORMAL LOGIC FOR MODERN BROWSERS ---
+        // --- STANDARD MODERN LOADER ---
         var script = document.createElement('script');
         script.src = "flutter_bootstrap.js";
         script.async = true;
