@@ -92,29 +92,6 @@
     }
   </style>
   <script id="splash-screen-script">
-    // Вивід помилок на екран для iOS 12
-    window.onerror = function(msg, url, line, col, error) {
-      var div = document.createElement("div");
-      div.style.position = "fixed"; div.style.top = "0"; div.style.left = "0";
-      div.style.background = "red"; div.style.color = "white"; div.style.zIndex = "9999";
-      div.style.fontSize = "10px"; div.style.padding = "5px";
-      div.innerHTML = "Error: " + msg + " at " + line + ":" + col;
-      document.body.appendChild(div);
-    };
-
-    window.flutterConfiguration = {
-      renderer: "html"
-    };
-
-    // Вимикаємо Service Worker для iOS 12
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        for(var i = 0; i < registrations.length; i++) {
-          registrations[i].unregister();
-        }
-      });
-    }
-
     function removeSplashFromWeb() {
       var splash = document.getElementById("splash");
       if (splash && splash.parentNode) { splash.parentNode.removeChild(splash); }
@@ -122,42 +99,53 @@
       if (branding && branding.parentNode) { branding.parentNode.removeChild(branding); }
       document.body.style.background = "transparent";
     }
-  </script>
-</head>
-<body>
-  <picture id="splash">
-      <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
-      <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
-      <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
-  </picture>
-  
-  <script>
-    window.flutterConfiguration = {
-      renderer: "html"
-    };
 
-    // Safe Loader для iOS 12
-    window.addEventListener('load', function(ev) {
-      var script = document.createElement('script');
-      script.src = 'main.dart.js';
-      script.type = 'application/javascript';
-      
-      // Ініціалізація Flutter Engine після завантаження main.dart.js
-      window._flutter = window._flutter || {};
-      window._flutter.loader = {
-        didCreateEngineInitializer: function(engineInitializer) {
-          engineInitializer.initializeEngine({
-            renderer: 'html'
-          }).then(function(appRunner) {
-            if (typeof removeSplashFromWeb === 'function') {
-              removeSplashFromWeb();
-            }
-            appRunner.runApp();
+    (function() {
+      var ua = navigator.userAgent;
+      var isLegacyIOS = /iPhone|iPad|iPod/.test(ua) && /OS 12_/.test(ua);
+
+      if (isLegacyIOS) {
+        // --- LOGIC FOR iOS 12 (iPhone 6) ---
+        window.flutterConfiguration = { renderer: "html" };
+        
+        // Вивід помилок ТІЛЬКИ для iOS 12
+        window.onerror = function(msg, url, line, col, error) {
+          var div = document.createElement("div");
+          div.style.position = "fixed"; div.style.top = "0"; div.style.left = "0";
+          div.style.background = "red"; div.style.color = "white"; div.style.zIndex = "9999";
+          div.style.fontSize = "10px"; div.style.padding = "5px";
+          div.innerHTML = "iOS 12 Error: " + msg + " at " + line + ":" + col;
+          document.body.appendChild(div);
+        };
+
+        // Вимикаємо Service Worker для iOS 12
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            for(var i = 0; i < regs.length; i++) { regs[i].unregister(); }
           });
         }
-      };
-      
-      document.body.appendChild(script);
-    });
+
+        window.addEventListener('load', function() {
+          var script = document.createElement('script');
+          script.src = 'main.dart.js';
+          window._flutter = window._flutter || {};
+          window._flutter.loader = {
+            didCreateEngineInitializer: function(engineInitializer) {
+              engineInitializer.initializeEngine({ renderer: 'html' }).then(function(appRunner) {
+                removeSplashFromWeb();
+                appRunner.runApp();
+              });
+            }
+          };
+          document.body.appendChild(script);
+        });
+      } else {
+        // --- LOGIC FOR MODERN BROWSERS ---
+        var script = document.createElement('script');
+        script.src = "flutter_bootstrap.js";
+        script.async = true;
+        document.head.appendChild(script);
+      }
+    })();
   </script>
 </body></html>
