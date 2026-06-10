@@ -131,15 +131,33 @@
       <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
   </picture>
   
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
+  <script>
+    window.flutterConfiguration = {
+      renderer: "html"
+    };
 
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
-  <script src="flutter_bootstrap.js" async=""></script>
-
-
+    // Safe Loader для iOS 12
+    window.addEventListener('load', function(ev) {
+      var script = document.createElement('script');
+      script.src = 'main.dart.js';
+      script.type = 'application/javascript';
+      
+      // Ініціалізація Flutter Engine після завантаження main.dart.js
+      window._flutter = window._flutter || {};
+      window._flutter.loader = {
+        didCreateEngineInitializer: function(engineInitializer) {
+          engineInitializer.initializeEngine({
+            renderer: 'html'
+          }).then(function(appRunner) {
+            if (typeof removeSplashFromWeb === 'function') {
+              removeSplashFromWeb();
+            }
+            appRunner.runApp();
+          });
+        }
+      };
+      
+      document.body.appendChild(script);
+    });
+  </script>
 </body></html>
