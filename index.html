@@ -94,8 +94,10 @@
   <script id="splash-screen-script">
     window.flutterWebRenderer = "html";
     function removeSplashFromWeb() {
-      document.getElementById("splash")?.remove();
-      document.getElementById("splash-branding")?.remove();
+      var splash = document.getElementById("splash");
+      if (splash) { splash.remove(); }
+      var branding = document.getElementById("splash-branding");
+      if (branding) { branding.remove(); }
       document.body.style.background = "transparent";
     }
   </script>
