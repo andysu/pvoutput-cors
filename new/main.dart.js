@@ -105224,7 +105224,7 @@ l=J.cu(a.f)&&J.fx(a.f).a!==p?new A.aBR(j,a):i
 k=J.cu(a.f)?"\u041e\u0441\u0442\u0430\u043d\u043d\u0456 \u0434\u0430\u043d\u0456: "+j.A9(J.fx(a.f).a):i
 g.b=j.S0(b,k,r+" ("+m+")",l)}g.c=B.al
 r=s.f
-if(r!=null&&r>0){m=A.jT(B.t9,c?B.qy:B.mm,i,18)
+if(r!=null&&r>0){m=A.jT(B.t8,c?B.qy:B.mm,i,18)
 l=b.ga4Y()
 l=A.as(l,i,i,i,i,A.bs(i,i,c?B.aD:B.aL,i,i,i,i,i,i,i,i,13,i,i,i,i,i,!0,i,i,i,i,i,i,i,i),i,i)
 r=B.d.R(r,1)
@@ -105318,7 +105318,7 @@ e=A.U(new A.aU(o,new A.aC1(),e),e.h("C.E"))
 a1=A.W(e).h("bo<1>")
 a6=A.U(new A.bo(e,a1),a1.h("a2.E"))
 a7=b1.adF(r,p,b4,b5,new A.aC2(b1),a2)
-e=A.cq(b1.pn(B.t8,B.at,b4,b5?"\u041a\u0440\u0430\u0449\u0438\u0439 \u043c\u0456\u0441\u044f\u0446\u044c":"Best Month",a4,h),1)
+e=A.cq(b1.pn(B.t9,B.at,b4,b5?"\u041a\u0440\u0430\u0449\u0438\u0439 \u043c\u0456\u0441\u044f\u0446\u044c":"Best Month",a4,h),1)
 a1=b5?"\u0421\u0435\u0440\u0435\u0434\u043d\u044c\u043e\u043c\u0456\u0441\u044f\u0447\u043d\u0438\u0439":"Monthly Avg"
 a8=A.bz(A.b([e,B.b4,A.cq(b1.pn(B.t4,B.aa,b4,a1,b5?"\u0430\u043a\u0442\u0438\u0432\u043d\u0456 \u043c\u0456\u0441\u044f\u0446\u0456":"active months",a5),1)],t.p),B.w,B.p,B.u,0)
 a9=A.kK(A.aOV(o,new A.aC3(),new A.aC4(),new A.aC5(),180,new A.aC6(),new A.aC7(b1,p),s,b3.gNz()+" "+b3.goS()+" (kWh)",t.Ks),null)
@@ -105501,7 +105501,7 @@ l=A.b([A.bz(A.b([new A.f5(1,B.bH,l,a1),B.oS,A.c2(a1,a1,B.n,a1,a1,new A.bN(q?B.cb
 if(o.length!==0)l.push(A.as(o,a1,B.a0,a1,a1,A.bs(a1,a1,a0.c?B.aD:B.aL,a1,a1,a1,a1,a1,a1,a1,a1,11,a1,a1,B.x,a1,a1,!0,a1,a1,a1,a1,a1,a1,a1,a1),a1,a1))
 l=A.c1(l,B.au,B.p,B.a9)
 j=a4.e
-i=j?B.t8:B.Sl
+i=j?B.t9:B.Sl
 i=A.jT(i,j?B.at:a1,a1,a1)
 j=j?"\u0412 \u043e\u0431\u0440\u0430\u043d\u043e\u043c\u0443":"\u0414\u043e\u0434\u0430\u0442\u0438 \u0432 \u043e\u0431\u0440\u0430\u043d\u0435"
 h=a0.b
@@ -106202,7 +106202,7 @@ A.xo.prototype={
 L(a){var s=null,r=A.dB(a,B.ln,t.wr)
 return A.WU(A.aOQ(s,s,s,s,s,s,A.as(r.gzh(),s,s,s,s,s,s,s),s),s,A.aU0(new A.avk(this,r),t.SF),s)}}
 A.avk.prototype={
-$3(a,b,c){var s,r,q=null,p=this.b,o=A.as(p.gZI(),q,q,q,q,B.it,q,q),n=A.as(p.ga4U()+": v1.0.0+1265 (67e541d \u2022 2026-11-03 16:21)",q,q,q,q,B.is,q,q),m=A.as(p.ga_0(),q,q,q,q,q,q,q),l=A.as(p.ga_U(),q,q,q,q,q,q,q),k=A.as(p.ga_T(),q,q,q,q,q,q,q),j=A.as(p.gyv(),q,q,q,q,B.it,q,q),i=A.as(p.gyv(),q,q,q,q,q,q,q),h=b.at,g=t.jm
+$3(a,b,c){var s,r,q=null,p=this.b,o=A.as(p.gZI(),q,q,q,q,B.it,q,q),n=A.as(p.ga4U()+": v1.0.0+1265 (67e541d \u2022 2026-11-03 16:47)",q,q,q,q,B.is,q,q),m=A.as(p.ga_0(),q,q,q,q,q,q,q),l=A.as(p.ga_U(),q,q,q,q,q,q,q),k=A.as(p.ga_T(),q,q,q,q,q,q,q),j=A.as(p.gyv(),q,q,q,q,B.it,q,q),i=A.as(p.gyv(),q,q,q,q,q,q,q),h=b.at,g=t.jm
 g=A.aP0(A.aVF(i,A.aUy(A.b([A.aPt(A.as(p.gRi(),q,q,q,q,q,q,q),B.lj,g),A.aPt(A.as(p.ga30(),q,q,q,q,q,q,q),B.Ka,g),A.aPt(A.as(p.ga0m(),q,q,q,q,q,q,q),B.p3,g)],t.Er),new A.avg(b),h,g)))
 h=A.as(p.gNg(),q,q,q,q,B.it,q,q)
 i=A.as(p.gNg(),q,q,q,q,q,q,q)
@@ -107608,7 +107608,7 @@ r=p.S1(B.aa,s,a,k,new A.aEO(p),r)
 k=p.d===B.h6
 if(k)s=a?B.k:c
 else s=a?B.aD:B.aL
-s=A.jT(B.t9,s,o,14)
+s=A.jT(B.t8,s,o,14)
 q=b?"\u0422\u0456\u043b\u044c\u043a\u0438 \u043d\u0430\u043f\u0440\u0443\u0433\u0430":"Voltage only"
 q=p.S1(c,s,a,k,new A.aEP(p),q)
 k=b?"\u0420\u0430\u0437\u043e\u043c":"Both"
@@ -112765,11 +112765,11 @@ B.t4=new A.bu(63249,"MaterialIcons",!1)
 B.Sf=new A.bu(63250,"MaterialIcons",!1)
 B.t5=new A.bu(63484,"MaterialIcons",!1)
 B.t7=new A.bu(983412,"MaterialIcons",!0)
+B.t8=new A.bu(983477,"MaterialIcons",!1)
 B.Sl=new A.bu(983505,"MaterialIcons",!1)
-B.t8=new A.bu(983508,"MaterialIcons",!1)
+B.t9=new A.bu(983508,"MaterialIcons",!1)
 B.Sm=new A.bu(983518,"MaterialIcons",!1)
 B.So=new A.bu(983712,"MaterialIcons",!1)
-B.t9=new A.bu(983720,"MaterialIcons",!1)
 B.ta=new A.bu(983726,"MaterialIcons",!1)
 B.tb=new A.bu(983741,"MaterialIcons",!1)
 B.tc=new A.bu(985076,"MaterialIcons",!1)
