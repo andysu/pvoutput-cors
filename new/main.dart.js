@@ -105303,7 +105303,7 @@ l=J.cm(a.f)&&J.f4(a.f).a!==p?new A.aBV(j,a):i
 k=J.cm(a.f)?"\u041e\u0441\u0442\u0430\u043d\u043d\u0456 \u0434\u0430\u043d\u0456: "+j.vD(J.f4(a.f).a):i
 g.b=j.S3(b,k,r+" ("+m+")",l)}r=A.ak(b.ga51(),i,i,i,i,i,i,i)
 m=A.aQX(i,i,i,i,i,i,i,i,i,q.ax.b.bj(0.8),i,i,i,i,i,i,i,i,B.acN,i)
-return A.W4(A.mw(new A.aBW(g,j,a,b,s,d,c,new A.Gy(!0,new A.aBX(a),i,i,i,m,B.n,i,!1,i,!0,i,new A.a8s(r,B.T9,m,i,i),i),new A.b3(B.Rb,A.dL(A.ak("v1.0.0+1266 \xb7 795383b \xb7 2026-11-03",i,i,i,i,A.bk(i,i,c?B.qw:B.r3,i,i,i,i,i,i,i,i,10,i,i,B.aq,i,i,!0,i,i,i,i,i,i,i,i),i,i),i,i),i))),new A.aBY(a))},
+return A.W4(A.mw(new A.aBW(g,j,a,b,s,d,c,new A.Gy(!0,new A.aBX(a),i,i,i,m,B.n,i,!1,i,!0,i,new A.a8s(r,B.T9,m,i,i),i),new A.b3(B.Rb,A.dL(A.ak("v1.0.0+1267 \xb7 795383b \xb7 2026-11-03",i,i,i,i,A.bk(i,i,c?B.qw:B.r3,i,i,i,i,i,i,i,i,10,i,i,B.aq,i,i,!0,i,i,i,i,i,i,i,i),i,i),i,i),i))),new A.aBY(a))},
 IQ(a,b){var s,r,q,p
 if(b.length>=8){s=A.cy(B.c.X(b,0,4),null)
 r=A.cy(B.c.X(b,4,6),null)
@@ -105927,7 +105927,7 @@ p=r?"\u043a\u0412\u0442\xb7\u0433\u043e\u0434":"kWh"
 o=A.bT(l,B.SW,B.n,l,l,new A.bG(B.aa,l,l,A.ba(8),l,l,B.N),l,l,l,B.Ry,l)
 n=A.ak("Solar Monitor 2.0",l,B.a_,l,l,A.bk(l,l,s?B.ao:B.ah,l,l,l,l,l,l,l,l,16,l,l,B.O,l,l,!0,l,l,l,l,l,l,l,l),l,l)
 m=t.p
-n=A.bs(A.b([o,B.b1,new A.eB(1,B.bs,A.c3(A.b([n,A.ak("v1.0.0+1266 \xb7 795383b \xb7 2026-11-03",l,B.a_,l,l,A.bk(l,l,s?B.qw:B.r3,l,l,l,l,l,l,l,l,10,l,l,B.aN,l,l,!0,l,l,l,l,l,l,l,l),l,l)],m),B.ap,B.o,B.a4),l)],m),B.v,B.o,B.a4,0)
+n=A.bs(A.b([o,B.b1,new A.eB(1,B.bs,A.c3(A.b([n,A.ak("v1.0.0+1267 \xb7 795383b \xb7 2026-11-03",l,B.a_,l,l,A.bk(l,l,s?B.qw:B.r3,l,l,l,l,l,l,l,l,10,l,l,B.aN,l,l,!0,l,l,l,l,l,l,l,l),l,l)],m),B.ap,B.o,B.a4),l)],m),B.v,B.o,B.a4,0)
 n=A.aOU(A.b([A.f9(l,l,l,B.T6,l,l,new A.aDr(a,k),l,l,l,k.gNG()),A.f9(l,l,l,B.ST,l,l,new A.aDs(a),l,l,l,k.gzi())],m),B.u,l,0,l,0,n,16)
 m=A.aU5(new A.aDt(this,k,s,r,q,p),t.SF)
 o=k.gKz()
@@ -106320,7 +106320,7 @@ A.xn.prototype={
 L(a){var s=null,r=A.dC(a,B.lr,t.wr)
 return A.WU(A.aOU(s,s,s,s,s,s,A.ak(r.gzi(),s,s,s,s,s,s,s),s),s,A.aU5(new A.avn(this,r),t.SF),s)}}
 A.avn.prototype={
-$3(a,b,c){var s,r,q=null,p=this.b,o=A.ak(p.gZL(),q,q,q,q,B.iu,q,q),n=A.ak(p.ga5_()+": v1.0.0+1266 (795383b \u2022 2026-11-03 22:28)",q,q,q,q,B.it,q,q),m=A.ak(p.ga_4(),q,q,q,q,q,q,q),l=A.ak(p.ga_Y(),q,q,q,q,q,q,q),k=A.ak(p.ga_X(),q,q,q,q,q,q,q),j=A.ak(p.gyw(),q,q,q,q,B.iu,q,q),i=A.ak(p.gyw(),q,q,q,q,q,q,q),h=b.at,g=t.jm
+$3(a,b,c){var s,r,q=null,p=this.b,o=A.ak(p.gZL(),q,q,q,q,B.iu,q,q),n=A.ak(p.ga5_()+": v1.0.0+1267 (795383b \u2022 2026-11-03 22:36)",q,q,q,q,B.it,q,q),m=A.ak(p.ga_4(),q,q,q,q,q,q,q),l=A.ak(p.ga_Y(),q,q,q,q,q,q,q),k=A.ak(p.ga_X(),q,q,q,q,q,q,q),j=A.ak(p.gyw(),q,q,q,q,B.iu,q,q),i=A.ak(p.gyw(),q,q,q,q,q,q,q),h=b.at,g=t.jm
 g=A.aP4(A.aVL(i,A.aUD(A.b([A.aPx(A.ak(p.gRl(),q,q,q,q,q,q,q),B.ln,g),A.aPx(A.ak(p.ga35(),q,q,q,q,q,q,q),B.Kd,g),A.aPx(A.ak(p.ga0r(),q,q,q,q,q,q,q),B.p8,g)],t.Er),new A.avj(b),h,g)))
 h=A.ak(p.gNg(),q,q,q,q,B.iu,q,q)
 i=A.ak(p.gNg(),q,q,q,q,q,q,q)
