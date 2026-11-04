@@ -90,7 +90,144 @@
       bottom: 0;
       right: 0;
     }
+
+    /* Solar Monitor 2.0 Upgrade Floating Banner */
+    .v2-banner {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 24px);
+      max-width: 560px;
+      z-index: 999999;
+      pointer-events: auto;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      animation: v2SlideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes v2SlideDown {
+      from { opacity: 0; transform: translate(-50%, -20px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+    .v2-banner-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 13px;
+      background: rgba(26, 20, 15, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 180, 120, 0.45);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(226, 180, 120, 0.15);
+      color: #FFF6EA;
+    }
+    .v2-banner-icon {
+      font-size: 24px;
+      line-height: 1;
+      filter: drop-shadow(0 0 6px rgba(226, 180, 120, 0.6));
+      flex-shrink: 0;
+    }
+    .v2-banner-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .v2-banner-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #FFFCF7;
+      line-height: 1.3;
+    }
+    .v2-banner-title b {
+      color: #E2B478;
+      font-weight: 700;
+    }
+    .v2-banner-desc {
+      font-size: 11px;
+      color: rgba(255, 246, 234, 0.7);
+      line-height: 1.25;
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .v2-banner-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #E2B478, #B57338);
+      color: #1A140F;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 9px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(181, 115, 56, 0.4);
+      transition: transform 0.15s ease, filter 0.15s ease;
+      flex-shrink: 0;
+    }
+    .v2-banner-btn:hover {
+      filter: brightness(1.1);
+      transform: scale(1.03);
+    }
+    .v2-banner-btn:active {
+      transform: scale(0.97);
+    }
+    .v2-banner-close {
+      background: transparent;
+      border: none;
+      color: rgba(255, 246, 234, 0.6);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      margin-left: 2px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .v2-banner-close:hover {
+      color: #FFFCF7;
+      background: rgba(255, 255, 255, 0.1);
+    }
   </style>
+  <div id="v2-upgrade-banner" class="v2-banner" style="display: none;">
+    <div class="v2-banner-content">
+      <div class="v2-banner-icon">☀️</div>
+      <div class="v2-banner-text">
+        <span class="v2-banner-title">Доступна нова версія <b>Solar Monitor 2.0</b></span>
+        <span class="v2-banner-desc">Ширші графіки, статус інвертора, без CORS-помилок</span>
+      </div>
+      <a href="new/" class="v2-banner-btn">Спробувати ➔</a>
+      <button class="v2-banner-close" onclick="dismissV2Banner(event)" title="Закрити" aria-label="Закрити">&times;</button>
+    </div>
+  </div>
+  <script>
+    function dismissV2Banner(e) {
+      if (e) e.stopPropagation();
+      var b = document.getElementById('v2-upgrade-banner');
+      if (b) b.style.display = 'none';
+      try {
+        sessionStorage.setItem('v2_banner_dismissed', 'true');
+      } catch (err) {}
+    }
+
+    (function() {
+      try {
+        if (!sessionStorage.getItem('v2_banner_dismissed')) {
+          var b = document.getElementById('v2-upgrade-banner');
+          if (b) b.style.display = 'block';
+        }
+      } catch (err) {
+        var b = document.getElementById('v2-upgrade-banner');
+        if (b) b.style.display = 'block';
+      }
+    })();
+  </script>
   <div id="unsupported-ui" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000; color:#fff; text-align:center; padding:40px; box-sizing:border-box; font-family:sans-serif; z-index:10000;">
     <h1 style="color:#FFD700; margin-top:20%;">Потрібне оновлення</h1>
     <p style="font-size:18px; line-height:1.5;">Ваш пристрій або браузер застарів.<br>Для роботи додатка потрібна версія <b>iOS 13.0</b> або новіша.</p>
