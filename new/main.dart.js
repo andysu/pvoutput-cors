@@ -106034,7 +106034,7 @@ m=A.cu("dd.MM.yyyy",h).cV(a.id)
 l=J.cs(a.f)&&J.fb(a.f).a!==p?new A.aCx(i,a):h
 k=J.cs(a.f)?"\u041e\u0441\u0442\u0430\u043d\u043d\u0456 \u0434\u0430\u043d\u0456: "+i.vO(J.fb(a.f).a):h
 f.b=i.Sp(b,k,r+" ("+m+")",l)}j=A.aYw(B.TN,A.ai(b.ga5P(),h,h,h,h,h,h,h),new A.aCy(a),A.aRM(h,h,h,h,h,h,h,h,h,q.ax.b.be(0.8),h,h,h,h,h,h,h,h,B.adw,h))
-return A.EX(A.mI(new A.aCz(f,i,a,b,s,d,c,j,new A.b3(B.RL,A.dR(A.ai("v1.0.0+1310 \xb7 8c37ced \xb7 2026-11-06",h,h,h,h,A.be(h,h,c?B.qS:B.rp,h,h,h,h,h,h,h,h,10,h,h,B.al,h,h,!0,h,h,h,h,h,h,h,h),h,h),h,h),h))),new A.aCA(a))},
+return A.EX(A.mI(new A.aCz(f,i,a,b,s,d,c,j,new A.b3(B.RL,A.dR(A.ai("v1.0.0+1312 \xb7 668dbe8 \xb7 2026-11-06",h,h,h,h,A.be(h,h,c?B.qS:B.rp,h,h,h,h,h,h,h,h,10,h,h,B.al,h,h,!0,h,h,h,h,h,h,h,h),h,h),h,h),h))),new A.aCA(a))},
 J3(a,b){var s,r,q,p
 if(b.length>=8){s=A.cp(B.c.V(b,0,4),null)
 r=A.cp(B.c.V(b,4,6),null)
@@ -106664,7 +106664,7 @@ p=r?"\u043a\u0412\u0442\xb7\u0433\u043e\u0434":"kWh"
 o=A.bW(l,B.Tz,B.o,l,l,new A.bH(B.a7,l,l,A.bd(8),l,l,B.R),l,l,l,B.S7,l)
 n=A.ai("Solar Monitor 2.0",l,B.X,l,l,A.be(l,l,s?B.as:B.ak,l,l,l,l,l,l,l,l,16,l,l,B.P,l,l,!0,l,l,l,l,l,l,l,l),l,l)
 m=t.p
-n=A.bh(A.b([o,B.b4,new A.e9(1,B.bg,A.c3(A.b([n,A.ai("v1.0.0+1310 \xb7 8c37ced \xb7 2026-11-06",l,B.X,l,l,A.be(l,l,s?B.qS:B.rp,l,l,l,l,l,l,l,l,10,l,l,B.aK,l,l,!0,l,l,l,l,l,l,l,l),l,l)],m),B.at,B.n,B.a4),l)],m),B.u,B.n,B.a4,0)
+n=A.bh(A.b([o,B.b4,new A.e9(1,B.bg,A.c3(A.b([n,A.ai("v1.0.0+1312 \xb7 668dbe8 \xb7 2026-11-06",l,B.X,l,l,A.be(l,l,s?B.qS:B.rp,l,l,l,l,l,l,l,l,10,l,l,B.aK,l,l,!0,l,l,l,l,l,l,l,l),l,l)],m),B.at,B.n,B.a4),l)],m),B.u,B.n,B.a4,0)
 n=A.aPG(A.b([A.ep(l,l,l,B.TK,l,l,new A.aEb(a,k),l,l,l,k.gNZ()),A.ep(l,l,l,B.Tw,l,l,new A.aEc(a),l,l,l,k.gzp())],m),B.v,l,0,l,0,n,16)
 m=A.aV3(new A.aEd(this,k,s,r,q,p),t.SF)
 o=k.gKQ()
@@ -107116,7 +107116,7 @@ A.xA.prototype={
 L(a){var s=null,r=A.dI(a,B.lz,t.wr)
 return A.Xc(A.aPG(s,s,s,s,s,s,A.ai(r.gzp(),s,s,s,s,s,s,s),s),s,A.aV3(new A.avX(this,r),t.SF),s)}}
 A.avX.prototype={
-$3(a,b,c){var s,r,q=null,p=this.b,o=A.ai(p.ga_k(),q,q,q,q,B.iA,q,q),n=A.ai(p.ga5N()+": v1.0.0+1310 (8c37ced \u2022 2026-11-06 12:28)",q,q,q,q,B.iz,q,q),m=A.ai(p.ga_F(),q,q,q,q,q,q,q),l=A.ai(p.ga0A(),q,q,q,q,q,q,q),k=A.ai(p.ga0z(),q,q,q,q,q,q,q),j=A.ai(p.gyF(),q,q,q,q,B.iA,q,q),i=A.ai(p.gyF(),q,q,q,q,q,q,q),h=b.at,g=t.jm
+$3(a,b,c){var s,r,q=null,p=this.b,o=A.ai(p.ga_k(),q,q,q,q,B.iA,q,q),n=A.ai(p.ga5N()+": v1.0.0+1312 (668dbe8 \u2022 2026-11-06 12:36)",q,q,q,q,B.iz,q,q),m=A.ai(p.ga_F(),q,q,q,q,q,q,q),l=A.ai(p.ga0A(),q,q,q,q,q,q,q),k=A.ai(p.ga0z(),q,q,q,q,q,q,q),j=A.ai(p.gyF(),q,q,q,q,B.iA,q,q),i=A.ai(p.gyF(),q,q,q,q,q,q,q),h=b.at,g=t.jm
 g=A.aPR(A.aWM(i,A.aVA(A.b([A.aQk(A.ai(p.gRI(),q,q,q,q,q,q,q),B.lv,g),A.aQk(A.ai(p.ga3R(),q,q,q,q,q,q,q),B.KB,g),A.aQk(A.ai(p.ga13(),q,q,q,q,q,q,q),B.ps,g)],t.Er),new A.avU(b),h,g)))
 h=A.ai(p.gNw(),q,q,q,q,B.iA,q,q)
 i=A.ai(p.gNw(),q,q,q,q,q,q,q)
